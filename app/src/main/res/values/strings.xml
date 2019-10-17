@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">ShoppingList</string>
+
+    <string name="item_prompt">Pick an Item</string>
+
+    <string-array name="shop_list">
+        <item>Apple</item>
+        <item>Banana</item>
+        <item>Orange</item>
+    </string-array>
+
+</resources>

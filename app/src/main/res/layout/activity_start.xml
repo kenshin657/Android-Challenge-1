@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Start"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Shopping List"
+        android:textSize="43dp"
+        android:textAlignment="center"
+        android:fontFamily="sans-serif-medium"
+        android:layout_marginTop="70dp"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="SHOP"
+        android:layout_gravity="center"
+        android:layout_marginTop="45dp"
+        android:onClick="shop"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="EXIT"
+        android:layout_gravity="center"
+        android:layout_marginTop="15dp"
+        android:onClick="exit"/>
+
+
+
+
+</LinearLayout>
