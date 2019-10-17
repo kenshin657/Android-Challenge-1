@@ -9,11 +9,12 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+
 import java.util.ArrayList;
 
 public class CheckoutActivity extends AppCompatActivity {
 
-    TextView total, change;
+    TextView total;
     EditText payment;
     int totalAmount, paymentAmount, changeAmount;
     ArrayList<String> items;
@@ -26,7 +27,6 @@ public class CheckoutActivity extends AppCompatActivity {
         Intent i = getIntent();
 
         total = findViewById(R.id.total);
-        change = findViewById(R.id.change);
         payment = findViewById(R.id.payment);
 
         totalAmount = i.getIntExtra("TOTAL", 0);
@@ -39,17 +39,6 @@ public class CheckoutActivity extends AppCompatActivity {
         finish();
     }
 
-    public void calculate(View v){
-        paymentAmount = Integer.parseInt(payment.getText().toString());
-
-        if(paymentAmount < totalAmount){
-            Toast.makeText(getApplicationContext(), "Invalid Amount Input", Toast.LENGTH_SHORT).show();
-        }
-        else{
-            changeAmount = paymentAmount - totalAmount;
-            change.setText("Change: " + changeAmount);
-        }
-    }
 
     public void finalize(View v){
         paymentAmount = Integer.parseInt(payment.getText().toString());
@@ -58,7 +47,14 @@ public class CheckoutActivity extends AppCompatActivity {
             Toast.makeText(getApplicationContext(), "Invalid Amount Input", Toast.LENGTH_SHORT).show();
         }
         else{
+            changeAmount = paymentAmount - totalAmount;
 
+            Intent intent = new Intent(this,FinalTransaction.class);
+            intent.putExtra("TOTAL", totalAmount);
+            intent.putExtra("PAID", paymentAmount);
+            intent.putExtra("CHANGE",changeAmount);
+            startActivity(intent);
+            finish();
         }
     }
 }

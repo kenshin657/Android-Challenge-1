@@ -19,6 +19,7 @@
         </activity>
         <activity android:name=".LIstView"></activity>
         <activity android:name=".CheckoutActivity"></activity>
+        <activity android:name=".FinalTransaction"></activity>
     </application>
 
 </manifest>
