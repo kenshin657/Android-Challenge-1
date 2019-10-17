@@ -7,6 +7,7 @@ import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -51,16 +52,21 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void add(View v) {
-        String str;
-        str = shopList.getSelectedItem().toString() + "....." + nItems.getText().toString();
 
-        adapter.add(str);
+        if(nItems.getText().toString().equals(""))
+            Toast.makeText(getApplicationContext(), "Please Input How Many...",Toast.LENGTH_SHORT ).show();
+        else {
 
-        nTotal.setText("Total: " + calculate(shopList.getSelectedItem().toString(), Integer.parseInt(nItems.getText().toString())));
+            String str;
+            str = shopList.getSelectedItem().toString() + "....." + nItems.getText().toString();
 
-        nItems.setText("");
+            adapter.add(str);
 
+            nTotal.setText("Total: " + calculate(shopList.getSelectedItem().toString(), Integer.parseInt(nItems.getText().toString())));
 
+            nItems.setText("");
+
+        }
 
     }
 
