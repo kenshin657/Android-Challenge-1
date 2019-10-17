@@ -20,6 +20,6 @@ public class Start extends AppCompatActivity {
     }
 
     public void exit(View v) {
-        finish();
+        finishAffinity();
     }
 }

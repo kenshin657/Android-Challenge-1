@@ -3,6 +3,7 @@ package com.example.shoppinglist;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -33,6 +34,7 @@ public class CheckoutActivity extends AppCompatActivity {
         total.setText(totalAmount + "");
 
         items = i.getStringArrayListExtra("LIST");
+
     }
 
     public void back(View v){
@@ -53,6 +55,7 @@ public class CheckoutActivity extends AppCompatActivity {
             intent.putExtra("TOTAL", totalAmount);
             intent.putExtra("PAID", paymentAmount);
             intent.putExtra("CHANGE",changeAmount);
+            intent.putStringArrayListExtra("LIST", items);
             startActivity(intent);
             finish();
         }
